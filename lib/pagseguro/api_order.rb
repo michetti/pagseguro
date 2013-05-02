@@ -24,7 +24,7 @@ module PagSeguro
 
     # Optional: define the shipping type. Can be 1 (PAC) or 2 (Sedex)
     attr_accessor :shipping_type
-    
+
     # Optional: extra amount on the purchase (negative for discount
     attr_accessor :extra_amount
 
@@ -36,10 +36,10 @@ module PagSeguro
 
     # Optional: maximum number of uses of generated code, integer greater than 0
     attr_accessor :max_uses
-    
+
     # Optional: maximum age of generated code in seconds, integer greater than 30
     attr_accessor :max_age
-    
+
     def initialize(order_id = nil)
       reset!
       self.id = order_id
