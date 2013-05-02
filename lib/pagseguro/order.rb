@@ -89,8 +89,12 @@ module PagSeguro
 
     private
     def convert_unit(number, unit)
-      number = (BigDecimal("#{number}") * unit).to_i unless number.nil? || number.kind_of?(Integer)
-      "%03d" % number.to_i
+      unless number.nil? || number.kind_of?(Integer)
+        number = "%03d" % (BigDecimal("#{number}") * unit).to_i
+        return number.to_i
+      end
+
+      number
     end
   end
 end
